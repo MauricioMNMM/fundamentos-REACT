@@ -2,23 +2,30 @@ import React from "react";
 import "./App.css";
 
 function App() {
+  const data = [
+    {
+      imagen:
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/Vaporwave-4K-Wallpapers.jpg",
+      titulo: "Image 3D",
+      descripcion: "Terreno 3D",
+      categoria: "FTO",
+    },
+    {
+      imagen:
+        "https://marcianosmx.com/wp-content/uploads/2013/08/minimoo64_fractals_01.jpg",
+      titulo: "Wolf Neon",
+      descripcion: "Flor que sale de dia",
+      categoria: "Flores",
+    },
+  ];
   return (
     <div>
       <Barra />
       <Wallpapers />
       <div className="Tarjetas">
-        <Tarjeta
-          imagen="https://upload.wikimedia.org/wikipedia/commons/5/53/Vaporwave-4K-Wallpapers.jpg"
-          titulo="Image 3D"
-          descripcion="Terreno 3D"
-          categoria="FTO"
-        />
-        <Tarjeta
-          imagen="https://marcianosmx.com/wp-content/uploads/2013/08/minimoo64_fractals_01.jpg"
-          titulo="Wolf Neon"
-          descripcion="Flor que sale de dia"
-          categoria="Flores"
-        />
+        {data.map((item) => {
+          return <Tarjeta {...item} />;
+        })}
         <Tarjeta
           imagen="https://media.istockphoto.com/photos/astronaut-deep-space-image-science-fiction-fantasy-in-high-resolution-picture-id1153308175?k=6&m=1153308175&s=612x612&w=0&h=_DHjK_PgfSmezWxaJJZ8IRdOG59f_j-mKiC0vJxfdSs="
           titulo="Atronauta"
